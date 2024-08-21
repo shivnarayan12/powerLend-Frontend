@@ -115,7 +115,7 @@ export default function CheckOut() {
         .then(data => {
             if (data.status === 'success') {
                 toast.success('Payment verified successfully!');
-                navigate('/CheckOut'); 
+                navigate('/'); 
             } else {
                 toast.error('Payment verification failed. Please try again.');
             }
