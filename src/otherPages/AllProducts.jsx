@@ -15,7 +15,7 @@ export default function AllProducts() {
   const [load,setLoad] = useState(false);
 
   useEffect(()=>{
-    axios.get('https://mern-powerlend-website-2.onrender.com/getProduct')
+    axios.get('https://mern-powerlend-website.onrender.com/getProduct')
     .then(e =>{
       setProducts(e.data);
       console.log("product is",products);

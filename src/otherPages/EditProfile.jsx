@@ -26,7 +26,7 @@ export default function EditProfile() {
   useEffect(() => {
     // console.log("userid",userid);
     // console.log("token",token);
-    axios.get(`https://mern-powerlend-website-2.onrender.com/getUpUser/${userid}`, {
+    axios.get(`https://mern-powerlend-website.onrender.com/getUpUser/${userid}`, {
       headers: {
         "Content-Type": "Application/json",
         Authorization: token,
@@ -46,7 +46,7 @@ export default function EditProfile() {
     e.preventDefault();
     // console.log(e.username);
 
-    axios.put("https://mern-powerlend-website-2.onrender.com/updateUser/" + userid,
+    axios.put("https://mern-powerlend-website.onrender.com/updateUser/" + userid,
       {
         image,
         username,

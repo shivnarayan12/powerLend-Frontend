@@ -34,7 +34,7 @@ export default function ProfilePage() {
     console.log("userid", userid);
     console.log("token", token);
 
-    axios.get(`https://mern-powerlend-website-2.onrender.com/getUser/${userid}`, {
+    axios.get(`https://mern-powerlend-website.onrender.com/getUser/${userid}`, {
       headers: {
         "Content-Type": "Application/json",
         authorization: token,

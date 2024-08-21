@@ -31,7 +31,7 @@ function AppBar() {
   );
   useEffect(()=>{
     if(token!=null){
-      axios.get('https://mern-powerlend-website-2.onrender.com/getCart/'+userid)
+      axios.get('https://mern-powerlend-website.onrender.com/getCart/'+userid)
     .then(e =>setCartProducts(e.data))
     .catch(err=>console.log(err));
       setHide(false);
