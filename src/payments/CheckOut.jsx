@@ -49,7 +49,7 @@ export default function CheckOut() {
 
     const handlePayment = async () => {
         try {
-            const order = await axios.post("hhttps://powerlend-tool-1-o.onrender.com/create-order", {
+            const order = await axios.post("https://powerlend-tool-1-o.onrender.com/create-order", {
                 amount: total
             }, {
                 headers: {
