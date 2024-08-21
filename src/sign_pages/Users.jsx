@@ -16,7 +16,7 @@ export default function Users() {
     const filteredUsers = users.filter((user) => user._id !== userId);
 
     useEffect(() => {
-        axios.get(`https://mern-powerlend-website.onrender.com/getUserDetails/${userId}`)
+        axios.get(`https://powerlend-tool-1-o.onrender.com/getUserDetails/${userId}`)
             .then(response => setUsers(response.data))
             .catch(err => console.error("Error fetching user details:", err));
 
@@ -25,7 +25,7 @@ export default function Users() {
 
     const handleDelete = () => {
         if (deleteUserId) {
-            axios.delete(`https://mern-powerlend-website.onrender.com/deleteUser/${deleteUserId}`)
+            axios.delete(`https://powerlend-tool-1-o.onrender.com/deleteUser/${deleteUserId}`)
                 .then(() => {
                     setUsers(users.filter(user => user._id !== deleteUserId));
                     setShow(false);

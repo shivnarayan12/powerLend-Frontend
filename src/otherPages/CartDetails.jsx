@@ -14,7 +14,7 @@ export default function CartDetails(props) {
     const handleShow = () => setShow(true);
 
   const handleDelete=(id)=>{
-    axios.post("https://mern-powerlend-website.onrender.com/deleteCart/"+id,{userid})
+    axios.post("https://powerlend-tool-1-o.onrender.com/deleteCart/"+id,{userid})
     .then(()=>{
       window.location.reload()
     })

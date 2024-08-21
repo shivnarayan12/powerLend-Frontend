@@ -15,7 +15,7 @@ export default function ProUpdate() {
     const navigate = useNavigate();
     
     useEffect(()=>{
-      axios.get("https://mern-powerlend-website.onrender.com/getUp/"+id)
+      axios.get("https://powerlend-tool-1-o.onrender.com/getUp/"+id)
       .then(e=>{ console.log(e)
         setProname(e.data.proname)
         setProrate(e.data.prorate)  
@@ -29,7 +29,7 @@ export default function ProUpdate() {
     }, [])
     const UpPro=(e)=>{
       e.preventDefault();
-      axios.put("https://mern-powerlend-website.onrender.com/updateProduct/"+id, {proname, prorate, desc, overview, avail, category, imgurl})
+      axios.put("https://powerlend-tool-1-o.onrender.com/updateProduct/"+id, {proname, prorate, desc, overview, avail, category, imgurl})
       .then(()=>{
         navigate("/AdminPortal")
       }).catch(err=>console.log(err))

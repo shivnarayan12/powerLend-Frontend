@@ -15,7 +15,7 @@ export default function CheckOut() {
     const token = window.localStorage.getItem("token");
 
     useEffect(() => {
-        axios.get(`https://mern-powerlend-website.onrender.com/getUpUser/${userid}`, {
+        axios.get(`https://powerlend-tool-1-o.onrender.com/getUpUser/${userid}`, {
             headers: {
                 "Content-Type": "application/json",
                 Authorization: token,
@@ -26,7 +26,7 @@ export default function CheckOut() {
 
     const handleOrderPlacement = async () => {
         try {
-            const response = await axios.put(`https://mern-powerlend-website.onrender.com/update-order-count/${userid}`, {
+            const response = await axios.put(`https://powerlend-tool-1-o.onrender.com/update-order-count/${userid}`, {
                 orders: 1
             }, {
                 headers: {
@@ -49,7 +49,7 @@ export default function CheckOut() {
 
     const handlePayment = async () => {
         try {
-            const order = await axios.post("https://mern-powerlend-website.onrender.com/create-order", {
+            const order = await axios.post("hhttps://powerlend-tool-1-o.onrender.com/create-order", {
                 amount: total
             }, {
                 headers: {
@@ -67,7 +67,7 @@ export default function CheckOut() {
                 description: "Power Lend Test Transaction",
                 image: "https://png.pngtree.com/png-clipart/20200701/original/pngtree-power-tool-design-png-image_5370869.jpg",
                 order_id: order.data.id,
-                callback_url: "https://mern-powerlend-website.onrender.com/verifyPayment", // Update with your server's URL
+                callback_url: "https://powerlend-tool-1-o.onrender.com/verifyPayment", // Update with your server's URL
                 prefill: {
                     name: "Shiv Narayan",
                     email: "PowerLend@gmail.com",
@@ -104,7 +104,7 @@ export default function CheckOut() {
             razorpay_signature: response.razorpay_signature,
         };
 
-        fetch("https://mern-powerlend-website.onrender.com/verifyPayment", {
+        fetch("https://powerlend-tool-1-o.onrender.com/verifyPayment", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

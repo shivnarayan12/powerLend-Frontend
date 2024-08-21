@@ -27,7 +27,7 @@ export default function AdminPortal() {
     useEffect(()=>{
       
       if(token!=null){
-        axios.get('https://mern-powerlend-website.onrender.com/getProduct')
+        axios.get('https://powerlend-tool-1-o.onrender.com/getProduct')
       .then(res =>setProducts(res.data))
       .catch(err=>console.log(err));
         setHide(false);
@@ -46,14 +46,14 @@ export default function AdminPortal() {
 
     const InsertProduct=(e)=>{
       e.preventDefault();
-      axios.post("https://mern-powerlend-website.onrender.com/createProduct", {proname, prorate, desc, overview, avail, category, imgurl})
+      axios.post("https://powerlend-tool-1-o.onrender.com/createProduct", {proname, prorate, desc, overview, avail, category, imgurl})
       .then(()=>{
         handleShow2()
       }).catch(err=>console.log(err))
     }
 
     const handleDelete=()=>{
-      axios.delete("https://mern-powerlend-website.onrender.com/deleteProduct/"+deleteproid)
+      axios.delete("https://powerlend-tool-1-o.onrender.com/deleteProduct/"+deleteproid)
       .then(()=>window.location.reload())
       .catch(err=> console.log(err))
     }

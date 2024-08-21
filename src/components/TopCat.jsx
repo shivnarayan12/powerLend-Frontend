@@ -10,7 +10,7 @@ export default function TopCat() {
     const [load,setLoad] = useState(false);
 
     useEffect(()=>{
-        axios.get('https://mern-powerlend-website.onrender.com/getProduct')
+        axios.get('https://powerlend-tool-1-o.onrender.com/getProduct')
         .then(e =>{
             setProducts(e.data);
             setLoad(true);

@@ -2,7 +2,7 @@ import axios from "axios";
 
 function ExpTable(props) {
   const handleDelete=(id)=>{
-    axios.delete('https://mern-powerlend-website.onrender.com/deleteExp/'+id).
+    axios.delete('https://powerlend-tool-1-o.onrender.com/deleteExp/'+id).
     then(e=> {console.log(e)
       window.location.reload()
     })

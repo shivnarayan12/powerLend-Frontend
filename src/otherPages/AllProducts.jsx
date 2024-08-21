@@ -12,10 +12,10 @@ import { Link } from 'react-router-dom';
 
 export default function AllProducts() {
   const [products,setProducts]=useState([]);
-  const [load,setLoad] = useState(false);
+  const [load,setLoad] = useState(false);new
 
   useEffect(()=>{
-    axios.get('https://mern-powerlend-website.onrender.com/getProduct')
+    axios.get('hhttps://powerlend-tool-1-o.onrender.com/getProduct')
     .then(e =>{
       setProducts(e.data);
       console.log("product is",products);

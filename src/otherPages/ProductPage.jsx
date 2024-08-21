@@ -33,7 +33,7 @@ export default function ProductPage() {
     const token = window.localStorage.getItem("token");
 
   useEffect(()=>{
-    axios.get("https://mern-powerlend-website.onrender.com/getUp/"+id)
+    axios.get("https://powerlend-tool-1-o.onrender.com/getUp/"+id)
       
       .then(e=>{ console.log(e)
         setProname(e.data.proname)
@@ -56,7 +56,7 @@ export default function ProductPage() {
     const InsertCart=(e)=>{
       e.preventDefault();
       setAvail(avail-1);
-      axios.post("https://mern-powerlend-website.onrender.com/createCart/"+userid, {proname, prorate, days, imgurl})
+      axios.post("https://powerlend-tool-1-o.onrender.com/createCart/"+userid, {proname, prorate, days, imgurl})
       .then(()=>{
         handleShow();
       }).catch(err=>console.log(err))

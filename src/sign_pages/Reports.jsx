@@ -9,7 +9,7 @@ export default function Reports() {
   const token = window.localStorage.getItem("token");
 
   useEffect(()=>{
-    axios.get('https://mern-powerlend-website.onrender.com/getUserreport')
+    axios.get('https://powerlend-tool-1-o.onrender.com/getUserreport')
     .then(e =>setUserreport(e.data))
     .catch(err=>console.log(err));
     if(token!=null){
@@ -19,7 +19,7 @@ export default function Reports() {
     }
   }, []);
   const handleDelete=(id)=>{
-    axios.delete('https://mern-powerlend-website.onrender.com/deleteReport/'+id)
+    axios.delete('https://powerlend-tool-1-o.onrender.com/deleteReport/'+id)
     .then(e=>window.location.reload())
     .catch(err=>console.log(err))
   }
