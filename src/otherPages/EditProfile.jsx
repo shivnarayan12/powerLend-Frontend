@@ -26,7 +26,7 @@ export default function EditProfile() {
   useEffect(() => {
     // console.log("userid",userid);
     // console.log("token",token);
-    axios.get(`https://powerlend-tool-1-o.onrender.com/getUpUser/${userid}`, {
+    axios.get(`https://powerlend.onrender.com/getUpUser/${userid}`, {
       headers: {
         "Content-Type": "Application/json",
         Authorization: token,
@@ -46,7 +46,7 @@ export default function EditProfile() {
     e.preventDefault();
     // console.log(e.username);
 
-    axios.put("https://powerlend-tool-1-o.onrender.com/updateUser/" + userid,
+    axios.put("https://powerlend.onrender.com/updateUser/" + userid,
       {
         image,
         username,

@@ -30,7 +30,7 @@ export default function Footer() {
 
   const SubmitExp = (e) => {
     e.preventDefault();
-    axios.post("https://powerlend-tool-1-o.onrender.com/createExperience", { name, experience })
+    axios.post("https://powerlend.onrender.com/createExperience", { name, experience })
       .then(res => {
         console.log(res);
         toast.success('Experience Submitted');
@@ -43,7 +43,7 @@ export default function Footer() {
 
   const SubmitReport = (e) => {
     e.preventDefault();
-    axios.post("https://powerlend-tool-1-o.onrender.com/createReport", { repname, report })
+    axios.post("https://powerlend.onrender.com/createReport", { repname, report })
       .then(() => {
         toast.success('Report Submitted');
         // Clear the form fields

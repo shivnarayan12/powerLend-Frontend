@@ -31,7 +31,7 @@ function AppBar() {
   );
   useEffect(()=>{
     if(token!=null){
-      axios.get('https://powerlend-tool-1-o.onrender.com/getCart/'+userid)
+      axios.get('https://powerlend.onrender.com/getCart/'+userid)
     .then(e =>setCartProducts(e.data))
     .catch(err=>console.log(err));
       setHide(false);

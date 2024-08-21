@@ -34,7 +34,7 @@ export default function ProfilePage() {
     console.log("userid", userid);
     console.log("token", token);
 
-    axios.get(`https://powerlend-tool-1-o.onrender.com/getUser/${userid}`, {
+    axios.get(`https://powerlend.onrender.com/getUser/${userid}`, {
       headers: {
         "Content-Type": "Application/json",
         authorization: token,

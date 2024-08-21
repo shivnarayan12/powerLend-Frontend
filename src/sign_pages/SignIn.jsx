@@ -23,7 +23,7 @@ export default function SignIn() {
   const handleSubmit=(e)=>{
     setLoad(false);
     e.preventDefault();
-    axios.post("https://powerlend-tool-1-o.onrender.com/login", {email, password})
+    axios.post("https://powerlend.onrender.com/login", {email, password})
     .then((res)=>{
       window.localStorage.setItem("userid", res.data.id);
       window.localStorage.setItem("token", res.data.tok);

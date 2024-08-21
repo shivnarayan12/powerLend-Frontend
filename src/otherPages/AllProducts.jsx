@@ -15,7 +15,7 @@ export default function AllProducts() {
   const [load,setLoad] = useState(false);new
 
   useEffect(()=>{
-    axios.get('https://powerlend-tool-1-o.onrender.com/getProduct')
+    axios.get('https://powerlend.onrender.com/getProduct')
     .then(e =>{
       setProducts(e.data);
       console.log("product is",products);
