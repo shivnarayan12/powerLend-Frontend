@@ -13,50 +13,59 @@ import { Link } from 'react-router-dom';
 import toast, { Toaster } from 'react-hot-toast';
 
 export default function Footer() {
-  const [name, setName] = useState();
-  const [experience, setExperience] = useState();
-  const [repname, setRepname] = useState();
-  const [report, setReport] = useState();
-  const [hide,setHide]=useState(true);
+  const [name, setName] = useState('');
+  const [experience, setExperience] = useState('');
+  const [repname, setRepname] = useState('');
+  const [report, setReport] = useState('');
+  const [hide, setHide] = useState(true);
   const logedin = window.localStorage.getItem("IsLogedIn");
 
-  useEffect(()=>{
-    if(logedin){
+  useEffect(() => {
+    if (logedin) {
       setHide(false);
-    }else{
+    } else {
       setHide(true);
     }
   }, []);
-  const SubmitExp=(e)=>{
+
+  const SubmitExp = (e) => {
     e.preventDefault();
-    axios.post("https://powerlendbackend.onrender.com/createExperience", {name, experience})
-    .then(res=> {console.log(res)
-      toast.success('Experience Submitted')
-    })
-    .catch(err=>console.log(err))
-  }
-  const SubmitReport=(e)=>{
+    axios.post("https://mern-powerlend-website-2.onrender.com/createExperience", { name, experience })
+      .then(res => {
+        console.log(res);
+        toast.success('Experience Submitted');
+        // Clear the form fields
+        setName('');
+        setExperience('');
+      })
+      .catch(err => console.log(err));
+  };
+
+  const SubmitReport = (e) => {
     e.preventDefault();
-    axios.post("https://powerlendbackend.onrender.com/createReport", {repname, report})
-    .then(()=>{
-      toast.success('Report Submitted')
-    })
-    .catch(err=>console.log(err));
-  }
+    axios.post("https://mern-powerlend-website-2.onrender.com/createReport", { repname, report })
+      .then(() => {
+        toast.success('Report Submitted');
+        // Clear the form fields
+        setRepname('');
+        setReport('');
+      })
+      .catch(err => console.log(err));
+  };
 
   return (
-    <MDBFooter style={{fontFamily:"Montserrat, sans-serif"}} className='text-center' id='footer' color='warning' bgColor='black'>
+    <MDBFooter style={{ fontFamily: "Montserrat, sans-serif" }} className='text-center' id='footer' color='warning' bgColor='black'>
       <MDBContainer className='p-4'>
         <section className='mb-4'>
-          <a href="https://github.com/vinayagamoorthyc?tab=repositories/" target='_blank'><Button variant="outline-warning"><i class="bi bi-github"></i></Button></a>{' '}&nbsp;
+          <a href="https://github.com/shivnarayan12" target='_blank'><Button variant="outline-warning"><i class="bi bi-github"></i></Button></a>{' '}&nbsp;
 
-          <a href="https://www.facebook.com/profile.php?id=100037768420533" target='_blank'><Button variant="outline-warning"><i class="bi bi-facebook"></i></Button></a>{' '}&nbsp;
+          <a href="https://www.facebook.com/profile.php?id=100049705831839" target='_blank'><Button variant="outline-warning"><i class="bi bi-facebook"></i></Button></a>{' '}&nbsp;
 
-          <a href="https://twitter.com/Vinayaga2709/" target='_blank'><Button variant="outline-warning"><i class="bi bi-twitter-x"></i></Button></a>{' '}&nbsp;
+          <a href="https://x.com/SHIVNARAYA10719" target='_blank'><Button variant="outline-warning"><i class="bi bi-twitter-x"></i></Button></a>{' '}&nbsp;
 
-          <a href="https://www.instagram.com/_.kolaru.__/" target='_blank'><Button variant="outline-warning"><i class="bi bi-instagram"></i></Button></a>{' '}&nbsp;
+          <a href="https://www.instagram.com/shivnarayansingh410/?hl=en" target='_blank'><Button variant="outline-warning"><i class="bi bi-instagram"></i></Button></a>{' '}&nbsp;
 
-          <a href="https://www.linkedin.com/in/vinayaga-moorthy-c-bb8284276/" target='_blank'><Button variant="outline-warning"><i class="bi bi-linkedin"></i></Button></a>{' '}&nbsp;
+          <a href="https://www.linkedin.com/in/shiv-narayan-singh-44722222a/" target='_blank'><Button variant="outline-warning"><i class="bi bi-linkedin"></i></Button></a>{' '}&nbsp;
 
         </section>
 
@@ -71,15 +80,17 @@ export default function Footer() {
 
               <MDBCol md='2' start>
                 <MDBInput contrast type='text' placeholder='Name' className='mb-4'
-                onChange={(e)=>setName(e.target.value)} required={true}/>
+                  value={name} // bind the state variable
+                  onChange={(e) => setName(e.target.value)} required={true} />
               </MDBCol>
               <MDBCol md='4' start>
                 <MDBInput contrast type='text' placeholder='Experienced Content' className='mb-4' required={true}
-                onChange={(e)=>setExperience(e.target.value)}/>
+                  value={experience} // bind the state variable
+                  onChange={(e) => setExperience(e.target.value)} />
               </MDBCol>
 
               <MDBCol size="auto">
-                <input type='Submit' class="btn btn-outline-warning"/>{' '}
+                <input type='Submit' class="btn btn-outline-warning" />{' '}
               </MDBCol>
             </MDBRow>
           </form>
@@ -96,15 +107,17 @@ export default function Footer() {
 
               <MDBCol md='2' start>
                 <MDBInput contrast type='text' placeholder='Name' className='mb-4' required={true}
-                onChange={(e)=>setRepname(e.target.value)}/>
+                  value={repname} // bind the state variable
+                  onChange={(e) => setRepname(e.target.value)} />
               </MDBCol>
               <MDBCol md='4' start>
                 <MDBInput contrast type='text' placeholder='Experienced Error' className='mb-4' required={true}
-                onChange={(e)=>setReport(e.target.value)}/>
+                  value={report} // bind the state variable
+                  onChange={(e) => setReport(e.target.value)} />
               </MDBCol>
 
               <MDBCol size="auto">
-              <input type='Submit' class="btn btn-outline-warning" value="Report"/>{' '}
+                <input type='Submit' class="btn btn-outline-warning" value="Report" />{' '}
               </MDBCol>
             </MDBRow>
           </form>
@@ -113,7 +126,7 @@ export default function Footer() {
         <section className='mb-4'>
           <h5>OUR MISSION</h5>
           <p>
-          At the heart of Power Rend is a commitment to empowering individuals and businesses by providing access to high-quality power tools without the burden of ownership. We strive to be the go-to destination for reliable and efficient tools that enhance productivity and make every project a success.
+            At the heart of Power Lend is a commitment to empowering individuals and businesses by providing access to high-quality power tools without the burden of ownership. We strive to be the go-to destination for reliable and efficient tools that enhance productivity and make every project a success.
           </p>
         </section>
 
@@ -133,9 +146,9 @@ export default function Footer() {
           PowerLend.com
         </Link>
       </div>
-      <Toaster 
-      position='bottom-right'
-      toastOptions={{duration: 4000}}
+      <Toaster
+        position='bottom-right'
+        toastOptions={{ duration: 4000 }}
       />
     </MDBFooter>
   );

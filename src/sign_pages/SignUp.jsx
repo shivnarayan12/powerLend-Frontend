@@ -22,7 +22,9 @@ export default function SignUp() {
   const handleSubmit=(e)=>{
     setLoad(false);
     e.preventDefault();
-    axios.post("https://powerlendbackend.onrender.com/register", {username, email, phone, password})
+    // axios.post("https://powerlendbackend.onrender.com/register", {username, email, phone, password})
+    axios.post("https://mern-powerlend-website-2.onrender.com/register", {username, email, phone, password})
+
     .then((e)=>{
       handleShow();
       setLoad(true);

@@ -33,7 +33,8 @@ export default function ProductPage() {
     const token = window.localStorage.getItem("token");
 
   useEffect(()=>{
-    axios.get("https://powerlendbackend.onrender.com/getUp/"+id)
+    axios.get("https://mern-powerlend-website-2.onrender.com/getUp/"+id)
+      
       .then(e=>{ console.log(e)
         setProname(e.data.proname)
         setProrate(e.data.prorate)  
@@ -55,7 +56,7 @@ export default function ProductPage() {
     const InsertCart=(e)=>{
       e.preventDefault();
       setAvail(avail-1);
-      axios.post("https://powerlendbackend.onrender.com/createCart/"+userid, {proname, prorate, days, imgurl})
+      axios.post("https://mern-powerlend-website-2.onrender.com/createCart/"+userid, {proname, prorate, days, imgurl})
       .then(()=>{
         handleShow();
       }).catch(err=>console.log(err))
@@ -98,7 +99,7 @@ export default function ProductPage() {
             <form onSubmit={InsertCart}>
             <div className='day_input'>
               <h5>How many days?</h5>
-              <input type="number" required={true} placeholder='Required Days' onChange={(e)=>setDays(e.target.value)}
+              <input type="number" required={true} placeholder='Required Days' min="1"onChange={(e)=>setDays(e.target.value)}
               style={{border:"1.9px solid rgba(0, 0, 0, 0.707)", width:"50%"}}
               disabled={hide}
               />
