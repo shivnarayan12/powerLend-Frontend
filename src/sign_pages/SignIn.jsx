@@ -95,10 +95,10 @@ export default function SignIn() {
         </div>
         <button>
           <span className='signIn_contact'>
-            <a style={{color:"black"}} href="https://www.instagram.com/_.kolaru.__/"><i class="bi bi-instagram"></i></a>&nbsp;&nbsp;&nbsp;
-            <a style={{color:"black"}} href="https://github.com/vinayagamoorthyc?tab=repositories/"><i class="bi bi-github"></i></a>&nbsp;&nbsp;&nbsp;
-            <a style={{color:"black"}} href="https://www.linkedin.com/in/vinayaga-moorthy-c-bb8284276/"><i class="bi bi-linkedin"></i></a>&nbsp;&nbsp;&nbsp;
-            <a style={{color:"black"}} href="https://www.facebook.com/profile.php?id=100037768420533"><i class="bi bi-facebook"></i></a>
+            <a style={{color:"black"}} href="https://www.instagram.com/shivnarayansingh410/?hl=en"><i class="bi bi-instagram"></i></a>&nbsp;&nbsp;&nbsp;
+            <a style={{color:"black"}} href="https://github.com/shivnarayan12"><i class="bi bi-github"></i></a>&nbsp;&nbsp;&nbsp;
+            <a style={{color:"black"}} href="https://www.linkedin.com/in/shiv-narayan-singh-44722222a/"><i class="bi bi-linkedin"></i></a>&nbsp;&nbsp;&nbsp;
+            <a style={{color:"black"}} href="https://www.facebook.com/profile.php?id=100049705831839"><i class="bi bi-facebook"></i></a>
           </span>
         </button>
       </div>
