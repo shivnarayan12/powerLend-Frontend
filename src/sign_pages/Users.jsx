@@ -16,16 +16,25 @@ export default function Users() {
     const filteredUsers = users.filter((user) => user._id !== userId);
 
     useEffect(() => {
-        axios.get(`https://powerlend.onrender.com/getUserDetails/${userId}`)
+        axios.get(`https://powerlend.onrender.com/getUserDetails`)
             .then(response => setUsers(response.data))
             .catch(err => console.error("Error fetching user details:", err));
 
         setHide(!token);
     }, [userId, token]);
 
-    const handleDelete = () => {
+    const handleDelete = () => {console.log(deleteUserId);
         if (deleteUserId) {
-            axios.delete(`https://powerlend.onrender.com/deleteUser/${deleteUserId}`)
+            axios.delete(`https://powerlend.onrender.com/deleteUser/${deleteUserId}`
+                , {
+                    headers: {
+                      "Content-Type": "Application/json",
+                      authorization: token,
+                    },
+                    withCredentials: true,
+                  })
+            
+            
                 .then(() => {
                     setUsers(users.filter(user => user._id !== deleteUserId));
                     setShow(false);
